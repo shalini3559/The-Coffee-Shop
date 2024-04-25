@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center mt-50 mb-50">
+    <div class="row">
+
+        
+    {% for c in coffee1 %}
+        <div class="col-md-3 mt-2">
+            <div class="card bg-light hover">
+                <div class="card-body">
+                    <div class="card-image">
+                        <img src="{{ c.img }}" width="100px" height="100px" >
+                    </div>
+                    <div>
+                        <a href="{% url 'coffee_details' c.pk %}">
+                            {{ c.name }} (${{c.price}})
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    {% endfor %}
+    </div>
+</div>   
+
+
+
+{% endblock %}
