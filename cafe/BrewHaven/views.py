@@ -35,4 +35,17 @@ class ProdDetails(DetailView):
         context = super(ProdDetails, self).get_context_data(*args, **kwargs)
         return context 
     
+
+def search_view(request):
+    query=request.GET.get('q')
+    results= Coffee.objects.filter(name__icontains=query)
+    template='search_result.html'
+    context={
+        'results':results,
+        'query':query
+    }
+    return render(request,template,context)
+    
+    
+    
     

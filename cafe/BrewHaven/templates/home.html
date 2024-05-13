@@ -10,14 +10,15 @@
         <div class="col-md-3 mt-2">
             <div class="card bg-light hover">
                 <div class="card-body">
+                    <a href="{% url 'coffee_details' c.pk %}">
                     <div class="card-image">
                         <img src="{{ c.img }}" width="100px" height="100px" >
                     </div>
                     <div>
-                        <a href="{% url 'coffee_details' c.pk %}">
+                        
                             {{ c.name }} (${{c.price}})
-                        </a>
                     </div>
+                </a>
                 </div>
             </div>
             

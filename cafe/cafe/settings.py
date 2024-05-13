@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'BrewHaven',
     'authentication',
+    'cart',
 
    
 ]
@@ -120,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_DIR = BASE_DIR/'static'
 STATIC_URL = "/static/"
-STATICFILES_DIR = [
+STATICFILES_DIRS = [
     STATIC_DIR
 ]
 
@@ -134,3 +135,8 @@ MEDIA_URL = '/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL ='home'
